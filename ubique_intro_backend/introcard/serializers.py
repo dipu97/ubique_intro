@@ -56,6 +56,6 @@ class UserInfoSerializer(serializers.ModelSerializer):
                   "author_posts"]
 
     def get_author_posts(self, user):
-        blogs = Card.objects.filter(author=user)[:9]
-        serializer = CardSerializer(blogs, many=True)
+        cards = Card.objects.filter(author=user)[:9]
+        serializer = CardSerializer(cards, many=True)
         return serializer.data

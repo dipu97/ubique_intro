@@ -1,27 +1,21 @@
 
 import { NavLink } from 'react-router-dom'
 
-const ResponsiveNavbar = ({isAuthenticated, username, logout}) => {
+const ResponsiveNavbar = ({isAuthenticated,isAdminUser, username, logout}) => {
   return (
     <nav className="max-container padding-x py-6 max-md:block hidden dark:text-[#FFFFFF]">
     <ul className="flex items-center justify-center gap-6 text-[#3B3C4A] lg:flex-1 flex-col dark:text-[#FFFFFF]">
 
    
-    {isAuthenticated ? (
+    { isAuthenticated ? (
             <>
               <li>Hi, {username}</li>
               <li onClick={logout} className="cursor-pointer">Logout</li>
-              <li className="font-semibold">
-            <NavLink
-              to="/create"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Create Post
-            </NavLink>
-          </li>
-            </>
-          ) : (
-            <>
+              <div>
+              </div>
+              </>
+          )  :(
+             <>
               <li>
                 <NavLink
                   to="/signin"

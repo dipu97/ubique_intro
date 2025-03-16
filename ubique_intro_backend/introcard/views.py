@@ -58,7 +58,7 @@ def update_user_profile(request):
 
 
 @api_view(["POST"])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAdminUser])
 def create_card(request):
     user = request.user
     serializer = CardSerializer(data=request.data)

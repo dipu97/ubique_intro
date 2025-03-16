@@ -11,6 +11,7 @@ const NavBar = ({
   username,
   setIsAuthenticated,
   setUsername,
+  isAdminUser
 }) => {
   const [showNavBar, setShowNavBar] = useState(false);
 
@@ -30,17 +31,22 @@ const NavBar = ({
         <ul className="flex items-center  justify-end gap-9 text-[#3B3C4A] lg:flex-1 max-md:hidden dark:text-[#FFFFFF]">
           {isAuthenticated ? (
             <>
-              <li>Hi, {username}</li>
+              <li>
+                <NavLink to={`user/profile/${username}`}>Hi, {username}</NavLink>
+              </li>
               <li onClick={logout} className="cursor-pointer">
                 Logout
               </li>
               <li className="font-semibold">
-            <NavLink
+            
+                <NavLink
               to="/create"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Create Post
             </NavLink>
+             
+            
           </li>
             </>
           ) : (
@@ -65,7 +71,6 @@ const NavBar = ({
             </>
           )}
 
-          
         </ul>
 
         <Switch onCheckedChange={handleDarkMode} checked={darkMode} />

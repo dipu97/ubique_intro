@@ -13,8 +13,7 @@ const PublicProfile = () => {
     queryKey: ["users", username],
     queryFn: () => getUserInfo(username)
   })
-console.log(data)
-  const cards = data?.author_posts
+  
 
   if(isPending){
     return <Spinner />

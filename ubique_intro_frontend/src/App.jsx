@@ -12,9 +12,10 @@ import { getUsername } from './services/apiCard'
 import ProtectedRoute from './component/ProtectedRoute'
 import {   useQuery } from '@tanstack/react-query'
 
-const App = () => {
+const App = ({authUserName}) => {
   const [username, setUsername] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const[isAdmin,setIsAdmin]=useState(false)
   const { data } = useQuery({
     queryKey: ["username"],
     queryFn: getUsername
@@ -26,6 +27,7 @@ const App = () => {
         setUsername(data.username);
         setIsAuthenticated(true);
       }
+     
     },
     [data]
   );
@@ -41,6 +43,7 @@ const App = () => {
               username={username}
               setUsername={setUsername}
               setIsAuthenticated={setIsAuthenticated}
+              
             />
           }
         >
@@ -56,7 +59,7 @@ const App = () => {
             }
           />
     <Route path='signup/' element={<SignupPage/>} />
-    <Route path='user/profile/:username' element={<ProfilePage/>}/>
+    <Route path="user/profile/:username" element={<ProfilePage authUserName={username} />} />
     <Route
             path="create/"
             element={

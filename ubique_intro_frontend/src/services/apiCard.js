@@ -80,3 +80,19 @@ export async function getCards(page) {
       throw new Error(err.message)
     }
   }
+
+  export async function updateProfile(data) {
+    try {
+      const response = await api.put(`update_user/`, data);
+      return response.data;
+    } catch (err) {
+      console.log(err)
+      if (err.response) {
+        throw new Error(
+          err?.response?.data.username[0] || "Failed to update profile"
+        );
+      }
+  
+      throw new Error(err.message);
+    }
+  }

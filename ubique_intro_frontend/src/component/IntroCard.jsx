@@ -21,7 +21,7 @@ const IntroCard = ({card}) => {
         {card.title}
       </h3></Link>
 
-    <CardFooter />
+    <CardFooter card={card} />
   </div>
   )
 }
