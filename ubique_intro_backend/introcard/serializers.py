@@ -6,7 +6,7 @@ from .models import Card
 class UpdateUserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ["id", "email", "username", "first_name", "last_name", "bio", "job_title", "profile_picture",
+        fields = ["id", "email", "username", "first_name", "last_name", "bio", "job_title","company", "profile_picture",
                   "facebook", "youtube", "instagram", "twitter"]
 
 
@@ -52,7 +52,7 @@ class UserInfoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ["id", "username", "email", "first_name", "last_name", "job_title", "bio", "profile_picture",
+        fields = ["id", "username", "email", "first_name", "last_name", "job_title", "bio","company", "profile_picture",
                   "author_posts"]
 
     def get_author_posts(self, user):
