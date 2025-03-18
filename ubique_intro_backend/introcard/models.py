@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from django.utils.text import slugify
 from django.utils import timezone
+from phonenumber_field.modelfields import PhoneNumberField
 import uuid
 
 # Create your models here.
@@ -14,6 +15,9 @@ class CustomUser(AbstractUser):
     profile_picture = models.ImageField(upload_to="profile_img", blank=True, null=True)
     profile_picture_url = models.URLField(blank=True, null=True)
     job_title = models.CharField(max_length=50, blank=True, null=True)
+    contact=PhoneNumberField(blank=True, null=True)
+    address = models.TextField(max_length=200,blank=True, null=True)
+    location =models.URLField(blank=True, null=True)
     company = models.CharField(max_length=50, blank=True, null=True)
     facebook = models.URLField(max_length=255, blank=True, null=True)
     youtube = models.URLField(max_length=255, blank=True, null=True)
@@ -26,13 +30,13 @@ class CustomUser(AbstractUser):
 
 
 class Card(models.Model):
-    CATEGORY = (("Metal_White", "Metal White"),
-                ("Metal_Black", "Metal Black"),
-                ("PVC_White", "PVC_White"),
-                ("PVC_Black", "PVC Black"),
+    CATEGORY = (("Metal White", "Metal White"),
+                ("Metal Black", "Metal Black"),
+                ("PVC White", "PVC White"),
+                ("PVC Black", "PVC Black"),
                 )
-    Sub_Category = (("Ubique_Logo", "Ubique Logo"),
-                    ("Custom_Logo", "Custom Logo"),)
+    Sub_Category = (("Ubique Logo", "Ubique Logo"),
+                    ("Custom Logo", "Custom Logo"),)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True)

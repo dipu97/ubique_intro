@@ -10,7 +10,7 @@ urlpatterns = [
     path("update_card/<int:pk>/", views.update_card, name="update_card"),
     path("delete_card/<int:pk>/", views.delete_card, name="delete_card"),
     path("update_user/", views.update_user_profile, name="update_user"),
-    path("get_username", views.get_username, name="get_username"),
+    path("get_username/", views.get_username, name="get_username"),
     path("get_userinfo/<str:username>", views.get_userinfo, name="get_userinfo"),
     path("get_user/<str:email>", views.get_user, name="get_user")
 ]

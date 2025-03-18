@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'introcard',
     'rest_framework',
     'corsheaders',
+"phonenumber_field",
 ]
 
 MIDDLEWARE = [

@@ -65,7 +65,7 @@ const CreateCardPage = () => {
           type="text"
           id="title"
           {...register("title", {
-            required: "Blog's title is required",
+            required: "Card's title is required",
             minLength: {
               value: 3,
               message: "The title must be at least 3 characters",
@@ -110,10 +110,10 @@ const CreateCardPage = () => {
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Categories</SelectLabel>
-              <SelectItem value="Metal_White">Metal White</SelectItem>
-              <SelectItem value="Metal_Black">Metal Black</SelectItem>
-              <SelectItem value="PVC_White">PVC White</SelectItem>
-              <SelectItem value="PVC_Black">PVC Black</SelectItem>
+              <SelectItem value="Metal White">Metal White</SelectItem>
+              <SelectItem value="Metal Black">Metal Black</SelectItem>
+              <SelectItem value="PVC White">PVC White</SelectItem>
+              <SelectItem value="PVC Black">PVC Black</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
@@ -127,23 +127,23 @@ const CreateCardPage = () => {
 
         <Select
           {...register("sub_category", { required: "Card's Sub category is required" })}
-          onValueChange={(value) => setValue("category", value)}
+          onValueChange={(value) => setValue("sub_category", value)}
         >
           <SelectTrigger className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-full max-sm:w-[300px] max-sm:text-[14px]">
-            <SelectValue placeholder="Select a category" />
+            <SelectValue placeholder="Select a Sub category" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Sub Categories</SelectLabel>
-              <SelectItem value="Ubique_Logo">Ubique Logo</SelectItem>
-              <SelectItem value="Custom_Logo">Custom Logo</SelectItem>
+              <SelectItem value="Ubique Logo">Ubique Logo</SelectItem>
+              <SelectItem value="Custom Logo">Custom Logo</SelectItem>
               
             </SelectGroup>
           </SelectContent>
         </Select>
 
-        {errors?.category?.message && (
-          <InputError error={errors.category.message} />
+        {errors?.sub_category?.message && (
+          <InputError error={errors.sub_category.message} />
         )}
       </div>
       <div>

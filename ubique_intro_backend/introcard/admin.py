@@ -9,12 +9,12 @@ from django.utils.translation import gettext_lazy as _
 
 class CustomUserAdmin(UserAdmin):
     list_display = (
-   "id", "username", "first_name", "last_name", "email", "job_title", "company", "profile_picture", "profile_picture_url")
+   "id", "username", "first_name", "last_name", "email", "job_title", "company","facebook","instagram","twitter","contact","address","location", "profile_picture", "profile_picture_url")
 
     fieldsets = (
         (None, {"fields": ("username", "password")}),
         (_("Personal info"), {"fields": (
-        "first_name", "last_name", "email", 'bio', 'profile_picture', 'job_title','company', 'facebook', 'twitter', 'instagram',
+        "first_name", "last_name", "email", 'bio', 'profile_picture', 'job_title','company', 'facebook', 'twitter','contact', 'address','location', 'instagram',
         'linkedin')}),
         (
             _("Permissions"),
@@ -33,7 +33,7 @@ class CustomUserAdmin(UserAdmin):
 
     add_fieldsets = UserAdmin.add_fieldsets + (
         (None, {
-            'fields': ('bio', 'profile_picture', 'job_title','company', 'facebook', 'twitter', 'instagram', 'linkedin')
+            'fields': ('bio', 'profile_picture', 'job_title','company', 'facebook', 'twitter', 'instagram','contact','address','location', 'linkedin')
         }),
     )
 

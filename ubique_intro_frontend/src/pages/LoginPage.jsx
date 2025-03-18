@@ -7,7 +7,7 @@ import { getUsername,signin } from "@/services/apiCard";
 import { toast } from "react-toastify";
 import SmallSpinner from "@/component/SmallSpinner";
 
-const LoginPage = ({setIsAuthenticated, setUsername,isAdminUser,setIsAdminUser}) => {
+const LoginPage = ({setIsAuthenticated, setUsername,isAdmin,setIsAdmin}) => {
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
   const location = useLocation()
@@ -19,8 +19,8 @@ const LoginPage = ({setIsAuthenticated, setUsername,isAdminUser,setIsAdminUser})
         localStorage.setItem("access", response.access)
         localStorage.setItem("refresh", response.refresh)
         setIsAuthenticated(true)
-        if(isAdminUser){
-            setIsAdminUser(true)
+        if(isAdmin){
+          setIsAdmin(true)
         }
         getUsername().then(res => setUsername(res.username))
         toast.success("You have successfully signed up!!");

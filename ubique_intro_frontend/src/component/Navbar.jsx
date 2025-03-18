@@ -11,7 +11,7 @@ const NavBar = ({
   username,
   setIsAuthenticated,
   setUsername,
-  isAdminUser
+  isAdmin
 }) => {
   const [showNavBar, setShowNavBar] = useState(false);
 
@@ -31,7 +31,7 @@ const NavBar = ({
         <ul className="flex items-center  justify-end gap-9 text-[#3B3C4A] lg:flex-1 max-md:hidden dark:text-[#FFFFFF]">
           {isAuthenticated ? (
             <>
-              <li>
+              <li className="capitalize">
                 <NavLink to={`user/profile/${username}`}>Hi, {username}</NavLink>
               </li>
               <li onClick={logout} className="cursor-pointer">
@@ -49,6 +49,7 @@ const NavBar = ({
             
           </li>
             </>
+            
           ) : (
             <>
               <li>

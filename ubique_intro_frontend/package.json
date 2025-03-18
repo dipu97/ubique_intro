@@ -16,8 +16,11 @@
     "@radix-ui/react-switch": "^1.1.3",
     "@tanstack/react-query": "^5.67.3",
     "axios": "^1.8.3",
+    "blob": "^0.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "file-saver": "^2.0.5",
+    "fs": "^0.0.1-security",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.479.0",
     "react": "^18.3.1",
@@ -28,7 +31,8 @@
     "react-spinners": "^0.15.0",
     "react-toastify": "^11.0.5",
     "tailwind-merge": "^3.0.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vcards-js": "^2.10.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

@@ -52,9 +52,16 @@ const SignupPage = ({ userInfo, updateForm, toggleModal }) => {
       formData.append("username", data.username)
       formData.append("first_name", data.first_name)
       formData.append("last_name", data.last_name)
+      formData.append("email", data.email)
       formData.append("job_title", data.job_title)
       formData.append("company", data.company)
       formData.append("bio", data.bio)
+      formData.append("facebook",data.facebook)
+      formData.append("instagram",data.instagram)
+      formData.append("twitter",data.twitter)
+      formData.append("contact",data.contact)
+      formData.append("address",data.address)
+      formData.append("location",data.location)
 
       if(data.profile_picture && data.profile_picture[0]){
         if(data.profile_picture[0] != "/"){
@@ -153,7 +160,47 @@ const SignupPage = ({ userInfo, updateForm, toggleModal }) => {
           <InputError error={errors.last_name.message} />
         )}
       </div>
-
+      {updateForm && <div>
+        <Label htmlFor="email" className="dark:text-[97989F]">
+          Your Mail Address 
+        </Label>
+        <Input
+          type="email"
+          id="email"
+          placeholder="Enter Mail Address"
+          {...register("email", {
+            minLength: {
+              value: 11,
+              message: "Your Mail Address Must be valid",
+            },
+          })}
+          className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-[300px]"
+        />
+        {errors?.email?.message && (
+          <InputError error={errors.email.message} />
+        )}
+      </div>}
+      {updateForm && <div>
+        <Label htmlFor="contact" className="dark:text-[97989F]">
+          Contact Number
+        </Label>
+        <Input
+          type="text"
+          id="contact"
+          placeholder="Enter Phone Number Must be +880 or Country Code"
+          {...register("contact", {
+            required: "Your contact is required",
+            minLength: {
+              value: 11,
+              message: "Your job title must be at least 3 characters",
+            },
+          })}
+          className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-[300px]"
+        />
+        {errors?.contact?.message && (
+          <InputError error={errors.contact.message} />
+        )}
+      </div>}
         {updateForm && <div>
         <Label htmlFor="job_title" className="dark:text-[97989F]">
           Job Title
@@ -182,7 +229,7 @@ const SignupPage = ({ userInfo, updateForm, toggleModal }) => {
         <Input
           type="text"
           id="company"
-          placeholder="Enter Job Title"
+          placeholder="Enter Your Company Name"
           {...register("company", {
             required: "Your Company is required",
             minLength: {
@@ -192,8 +239,40 @@ const SignupPage = ({ userInfo, updateForm, toggleModal }) => {
           })}
           className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-[300px]"
         />
-        {errors?.job_title?.message && (
-          <InputError error={errors.job_title.message} />
+        {errors?.company?.message && (
+          <InputError error={errors.company.message} />
+        )}
+      </div>}
+      {updateForm && <div>
+        <Label htmlFor="address" className="dark:text-[97989F]">
+          Your Address
+        </Label>
+        <Input
+          type="text"
+          id="address"
+          placeholder="Enter You Address"
+          {...register("address", {
+          })}
+          className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-[300px]"
+        />
+        {errors?.address?.message && (
+          <InputError error={errors.address.message} />
+        )}
+      </div>}
+      {updateForm && <div>
+        <Label htmlFor="location" className="dark:text-[97989F]">
+          Your Location Address
+        </Label>
+        <Input
+          type="link"
+          id="location"
+          placeholder="Enter Your Location Address"
+          {...register("location", {
+          })}
+          className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-[300px]"
+        />
+        {errors?.location?.message && (
+          <InputError error={errors.location.message} />
         )}
       </div>}
 
@@ -215,7 +294,67 @@ const SignupPage = ({ userInfo, updateForm, toggleModal }) => {
           <InputError error={errors.bio.message} />
         )}
       </div>}
-
+      {updateForm && <div>
+        <Label htmlFor="facebook" className="dark:text-[97989F]">
+          Facebook
+        </Label>
+        <Input
+          type="link"
+          id="facebook"
+          placeholder="Enter Facebook Link"
+          {...register("facebook", {
+            minLength: {
+              value: 3,
+              message: "Your facebook link must be at least 3 characters",
+            },
+          })}
+          className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-[300px]"
+        />
+        {errors?.facebook?.message && (
+          <InputError error={errors.facebook.message} />
+        )}
+      </div>}
+      {updateForm && <div>
+        <Label htmlFor="instagram" className="dark:text-[97989F]">
+          Instagram
+        </Label>
+        <Input
+          type="text"
+          id="instagram"
+          placeholder="Enter Job Title"
+          {...register("instagram", {
+            minLength: {
+              value: 3,
+              message: "Your instagram name must be at least 3 characters",
+            },
+          })}
+          className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-[300px]"
+        />
+        {errors?.instagram?.message && (
+          <InputError error={errors.instagram.message} />
+        )}
+      </div>}
+      {updateForm && <div>
+        <Label htmlFor="twitter" className="dark:text-[97989F]">
+          Twitter
+        </Label>
+        <Input
+          type="link"
+          id="twitter"
+          placeholder="Enter Twitter Link"
+          {...register("twitter", {
+            
+            minLength: {
+              value: 3,
+              message: "Your twitter name must be at least 3 characters",
+            },
+          })}
+          className="border-2 border-[#141624] dark:border-[#3B3C4A] focus:outline-0 h-[40px] w-[300px]"
+        />
+        {errors?.twitter?.message && (
+          <InputError error={errors.twitter.message} />
+        )}
+      </div>}
       {updateForm && <div className="w-full">
         <Label htmlFor="profile_picture">Profile Picture</Label>
         <Input
