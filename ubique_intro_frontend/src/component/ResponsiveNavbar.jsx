@@ -1,5 +1,5 @@
 
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const ResponsiveNavbar = ({isAuthenticated,isAdminUser, username, logout}) => {
   return (
@@ -9,7 +9,10 @@ const ResponsiveNavbar = ({isAuthenticated,isAdminUser, username, logout}) => {
    
     { isAuthenticated ? (
             <>
-              <li>Hi, {username}</li>
+            
+            <li className="capitalize">
+                <NavLink to={`user/profile/${username}`}>Hi, {username}</NavLink>
+              </li>
               <li onClick={logout} className="cursor-pointer">Logout</li>
               <div>
               </div>

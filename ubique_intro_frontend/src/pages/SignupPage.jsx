@@ -160,7 +160,7 @@ const SignupPage = ({ userInfo, updateForm, toggleModal }) => {
           <InputError error={errors.last_name.message} />
         )}
       </div>
-      {updateForm && <div>
+      <div>
         <Label htmlFor="email" className="dark:text-[97989F]">
           Your Mail Address 
         </Label>
@@ -179,7 +179,7 @@ const SignupPage = ({ userInfo, updateForm, toggleModal }) => {
         {errors?.email?.message && (
           <InputError error={errors.email.message} />
         )}
-      </div>}
+      </div>
       {updateForm && <div>
         <Label htmlFor="contact" className="dark:text-[97989F]">
           Contact Number
