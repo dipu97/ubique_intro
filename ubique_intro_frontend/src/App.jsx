@@ -48,7 +48,7 @@ const App = ({authUserName}) => {
           }
         >
     <Route index element={<HomePage/>}/>
-    <Route path="cards/:id" element={<IntroDetails/>} />
+    <Route path="cards/:id" element={<IntroDetails username={username} isAuthenticated={isAuthenticated}/>} />
     <Route
             path="signin"
             element={

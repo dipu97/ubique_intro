@@ -96,3 +96,31 @@ export async function getCards(page) {
       throw new Error(err.message);
     }
   }
+
+  export async function updateCard(data, id){
+    try{
+      const response = await api.put(`update_card/${id}/`, data)
+      return response.data
+    }
+  
+    catch(err){
+      if(err.response){
+        throw new Error(err.response?.data?.message || "Failed to update Card" )
+      }
+  
+      throw new Error(err.message)
+    }
+  }
+
+  export async function deleteCard(id) {
+    try {
+      const response = await api.post(`delete_card/${id}/`);
+      return response.data;
+    } catch (err) {
+      if (err.response) {
+        throw new Error(err.response?.data?.message || "Failed to delete Card");
+      }
+  
+      throw new Error(err.message);
+    }
+  }

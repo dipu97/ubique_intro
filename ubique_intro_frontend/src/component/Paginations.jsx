@@ -8,7 +8,6 @@ import {
     PaginationPrevious,
   } from "@/components/ui/pagination"
   
-  import React from 'react'
   
   const Paginations =({
     numOfPages,

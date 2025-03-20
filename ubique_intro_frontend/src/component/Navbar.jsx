@@ -37,17 +37,7 @@ const NavBar = ({
               <li onClick={logout} className="cursor-pointer">
                 Logout
               </li>
-              <li className="font-semibold">
-            
-                <NavLink
-              to="/create"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Create Post
-            </NavLink>
              
-            
-          </li>
             </>
             
           ) : (

@@ -16,7 +16,7 @@ const IntroCard = ({card}) => {
 
       <Badge  card={card}/>
     
-      <Link to={`cards/${card.id}`}>
+      <Link to={`/cards/${card.id}`}>
       <h3 className="font-semibold  leading-normal text-[#181A2A] mb-0 dark:text-white">
         {card.title}
       </h3></Link>

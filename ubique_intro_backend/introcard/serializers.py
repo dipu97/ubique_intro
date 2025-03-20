@@ -52,7 +52,7 @@ class UserInfoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ["id", "username", "email", "first_name", "last_name", "job_title", "bio","company","facebook","instagram","twitter","contact","location","address", "profile_picture",
+        fields = ["id", "username", "email", "first_name", "last_name", "job_title", "bio","company","facebook","instagram","twitter","contact","location","address","is_staff", "profile_picture",
                   "author_posts"]
 
     def get_author_posts(self, user):

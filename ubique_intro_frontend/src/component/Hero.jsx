@@ -9,12 +9,12 @@ import { HiPencilAlt } from "react-icons/hi";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdPhoneInTalk } from "react-icons/md";
 import { BiCurrentLocation } from "react-icons/bi";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { BASE_URL } from '@/api/api';
 // import vCardsJS from 'vcards-js';
 
 
-const Hero = ({userInfo,authUserName,toggleModal,isAdmin}) => {
+const Hero = ({userInfo,authUserName,toggleModal}) => {
   
 
   return (
@@ -45,14 +45,19 @@ const Hero = ({userInfo,authUserName,toggleModal,isAdmin}) => {
           </span>
         )}
         {
-          isAdmin?(
-            <Link to='/'>Create Card</Link>
+          userInfo.is_staff?(
+            
+            <NavLink className="font-semibold text-[#141624] text-xl dark:text-[#FFFFFF]"
+          to="/create"
+        >Create Card
+        </NavLink>
           ):''
         }
     </div>
 
     <p className="text-[#3B3C4A] text-[16px] max-md:leading-[2rem] lg:leading-normal lg:mx-[200px] text-center dark:text-[#BABABF]">
      {userInfo.bio}
+    
     </p>
     
       <Link to={`mailto:${userInfo.email}`}>

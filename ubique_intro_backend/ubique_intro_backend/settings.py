@@ -88,7 +88,16 @@ DATABASES = {
     }
 }
 
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'unicorn',
+#         'USER': 'unicorn',
+#         'PASSWORD': 'Optima2025Optima',
+#         'HOST': 'unicorn.c2nuai8w0clk.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -153,6 +162,7 @@ CORS_ALLOWED_ORIGINS = [
 "http://localhost:5174",
 "http://localhost:5175",
 "http://localhost:3000",
-"https://devfolio-xvbo.onrender.com",
-"https://devscribe.onrender.com"
+"https://54.211.231.82",
+"http://172.31.30.176",
+"https://172.31.30.176",
 ]
